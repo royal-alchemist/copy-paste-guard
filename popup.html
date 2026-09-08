@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 360px;
+      margin: 0;
+      padding: 20px;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background: #f7f8fa;
+      color: #1f2937;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 20px;
+
+      box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .title {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .description {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #6b7280;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      height: 42px;
+
+      padding: 0 12px;
+
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+
+      background: white;
+      color: #111827;
+
+      font-size: 13px;
+
+      outline: none;
+
+      transition:
+        border-color 0.15s,
+        box-shadow 0.15s;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+
+      box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    input::placeholder {
+      color: #9ca3af;
+    }
+
+    button {
+      width: 100%;
+      height: 42px;
+
+      margin-top: 14px;
+
+      border: none;
+      border-radius: 8px;
+
+      background: #2563eb;
+      color: white;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition:
+        background 0.15s,
+        transform 0.05s;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #status {
+      min-height: 20px;
+
+      margin: 12px 0 0;
+
+      text-align: center;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      color: #16a34a;
+    }
+
+    .footer {
+      margin-top: 14px;
+
+      text-align: center;
+
+      font-size: 11px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="header">
+      <h1 class="title">
+        LinkedIn Paste Guard
+      </h1>
+
+      <p class="description">
+        Set the LinkedIn profile that belongs to this Chrome profile.
+        LinkedIn URLs will be checked before they are pasted.
+      </p>
+    </div>
+
+    <label for="linkedinUrl">
+      Expected LinkedIn Profile
+    </label>
+
+    <input
+      id="linkedinUrl"
+      type="url"
+      placeholder="https://www.linkedin.com/in/username"
+      autocomplete="off"
+    />
+
+    <button id="save">
+      Save Profile
+    </button>
+
+    <p id="status"></p>
+
+  </div>
+
+  <div class="footer">
+    Paste Guard
+  </div>
+
+  <script src="popup.js"></script>
+
+</body>
+</html>
